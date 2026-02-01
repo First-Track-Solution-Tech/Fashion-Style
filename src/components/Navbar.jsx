@@ -34,18 +34,37 @@ const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
         <div className="flex items-center justify-between px-4 py-3">
 
           {/* LOGO */}
+         
             <Link to="/" className="flex items-center gap-3">
               <img
                 src="/Logo.png"
                 alt="FashionStyle Logo"
-                className="h-10 md:h-12 rounded-full"
+                className="h-14 md:h-18 lg:h-20 object-contain"
+              />
+              <span className="text-xl md:text-2xl font-bold tracking-wide
+                bg-gradient-to-r from-sky-400 via-pink-400 to-rose-500
+                bg-clip-text text-transparent">
+                  Fashion Style
+                </span>
+
+               
+              </Link>
+
+            {/* <Link to="/" className="flex items-center gap-3">
+              <img
+                src="/Logo.png"
+                alt="FashionStyle Logo"
+                // className="h-14 md:h-16 object-contain"
+
+                // className="h-14 md:h-18 lg:h-20 rounded-full"
+                // className="h-10 md:h-12 rounded-full"
               />
 
               <span className="text-xl md:text-2xl font-bold tracking-wide text-gray-900">
                 Fashion{" "}
                 <span className="text-red-500">Style</span>
               </span>
-            </Link>
+            </Link> */}
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-8">

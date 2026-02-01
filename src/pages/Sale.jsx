@@ -15,7 +15,7 @@ const Sale = () => {
       reviews: 120,
       isOnSale: true,
       image:
-        "https://images.unsplash.com/photo-1520974735194-6c8a6c1d3c1b",
+        "https://images.pexels.com/photos/7582114/pexels-photo-7582114.jpeg",
       sizes: ["S", "M", "L"],
     },
     {
@@ -29,7 +29,7 @@ const Sale = () => {
       reviews: 98,
       isOnSale: true,
       image:
-        "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+        "https://images.pexels.com/photos/31041710/pexels-photo-31041710.jpeg",
       sizes: ["M", "L"],
     },
     {

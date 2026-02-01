@@ -94,7 +94,7 @@ const NewArrivals = () => {
       price: 4999,
       category: "ethnic",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1618354691373-44f1c0d58b38",
+      image: "https://images.pexels.com/photos/12089493/pexels-photo-12089493.jpeg",
     },
     {
       id: 12,
