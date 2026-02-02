@@ -24,6 +24,7 @@ import ContactUs from "./pages/ContactUs";
 import TermsOfUses from "./pages/TermsOfUses";
 import ReturnAndExchanges from "./pages/ReturnAndExchanges";
 import RefundAndCancellation from "./pages/RefundAndCancellation";
+import { WishlistProvider } from "./context/WishlistContext";
 
 function AppContent() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function AppContent() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<ContactUs />} />
+        
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -67,10 +69,13 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <WishlistProvider>
+        <AppContent />
+      </WishlistProvider>
     </Router>
   );
 }
+
 
 export default App;
 

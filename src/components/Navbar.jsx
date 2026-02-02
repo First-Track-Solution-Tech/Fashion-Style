@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
 import image from "../assets/image.png";
+import { useWishlist } from "../context/WishlistContext";
 
-const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
+
+// const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
+const Navbar = ({ cartCount = 0 }) => {
+  const { wishlistCount } = useWishlist();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const [openCategories, setOpenCategories] = useState(false);
+
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -23,6 +29,7 @@ const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
 
   return (
     <header>
+      
       <nav className="bg-white/90 backdrop-blur shadow sticky top-0 z-50">
 
         {/* 🔔 TOP BANNER */}
@@ -133,14 +140,28 @@ const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
           <div className="flex items-center gap-2">
 
             {/* WISHLIST */}
-            <Link to="/wishlist" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
+             <Link
+              to="/wishlist"
+              className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100"
+            >
+              <Heart className="w-5 h-5 text-gray-600" />
+
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs
+                                w-5 h-5 rounded-full flex items-center justify-center">
+                  {wishlistCount}
+                </span>
+              )}
+            </Link>
+
+            {/* <Link to="/wishlist" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
               <Heart className="w-5 h-5 text-gray-600" />
               {wishlistCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
-            </Link>
+            </Link> */}
 
             {/* CART */}
             <Link to="/cart" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
@@ -195,9 +216,14 @@ const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
 
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b">
-              <h2 className="text-xl font-bold text-gray-900">
+              <span className="text-xl md:text-2xl font-bold tracking-wide
+                bg-gradient-to-r from-sky-400 via-pink-400 to-rose-500
+                bg-clip-text text-transparent">
+                  Fashion Style
+                </span>
+              {/* <h2 className="text-xl font-bold text-gray-900">
                 Fashion <span className="text-red-500">Style</span>
-              </h2>
+              </h2> */}
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center"
@@ -226,40 +252,54 @@ const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
               </Link>
 
               {/* Categories */}
+              {/* Categories (Accordion) */}
               <div>
-                <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">
+                <button
+                  onClick={() => setOpenCategories(!openCategories)}
+                  className="flex items-center justify-between w-full text-xs uppercase
+                            tracking-wide text-gray-400 mb-2"
+                >
                   Categories
-                </p>
-                <div className="space-y-2 pl-3">
-                  <Link
-                    to="/category/T-Shirts"
-                    className="block text-gray-700 hover:text-pink-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    T-Shirts
-                  </Link>
-                  <Link
-                    to="/category/Hoodies"
-                    className="block text-gray-700 hover:text-pink-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Hoodies
-                  </Link>
-                  <Link
-                    to="/category/Jeans"
-                    className="block text-gray-700 hover:text-pink-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Jeans
-                  </Link>
-                  <Link
-                    to="/category/Ethnic Wear"
-                    className="block text-gray-700 hover:text-pink-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Ethnic Wear
-                  </Link>
-                </div>
+                  <span className="text-gray-600">
+                    {openCategories ? "−" : "+"}
+                  </span>
+                </button>
+
+                {openCategories && (
+                  <div className="space-y-2 pl-3">
+                    <Link
+                      to="/category/T-Shirts"
+                      className="block text-gray-700 hover:text-pink-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      T-Shirts
+                    </Link>
+
+                    <Link
+                      to="/category/Hoodies"
+                      className="block text-gray-700 hover:text-pink-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Hoodies
+                    </Link>
+
+                    <Link
+                      to="/category/Jeans"
+                      className="block text-gray-700 hover:text-pink-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Jeans
+                    </Link>
+
+                    <Link
+                      to="/category/Ethnic Wear"
+                      className="block text-gray-700 hover:text-pink-600"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Ethnic Wear
+                    </Link>
+                  </div>
+                )}
               </div>
 
               <Link

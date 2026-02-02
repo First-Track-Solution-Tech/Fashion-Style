@@ -1,32 +1,38 @@
+import { Trash2, Heart } from "lucide-react";
 import { useWishlist } from "../context/WishlistContext";
-import { Link } from "react-router-dom";
 
 const Wishlist = () => {
-  const { wishlist } = useWishlist();
+  const { wishlist, removeFromWishlist } = useWishlist();
 
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-bold mb-6">Your Wishlist</h2>
+    <div className="min-h-screen px-6 py-10">
+      <h1 className="text-3xl font-bold mb-6 flex items-center gap-2">
+        <Heart className="text-pink-500" /> My Wishlist
+      </h1>
 
       {wishlist.length === 0 ? (
-        <p>No items in wishlist</p>
+        <p className="text-gray-500">Your wishlist is empty 💔</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {wishlist.map((product) => (
-            <div key={product.id} className="border p-4 rounded shadow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {wishlist.map((item) => (
+            <div key={item.id} className="bg-white rounded-xl shadow">
               <img
-                src={product.image}
-                alt={product.name}
-                className="h-40 mx-auto"
+                src={item.image}
+                alt={item.name}
+                className="h-56 w-full object-cover rounded-t-xl"
               />
-              <h3 className="font-semibold mt-2">{product.name}</h3>
-              <p>₹{product.price}</p>
-              <Link
-                to={`/products/${product.id}`}
-                className="text-blue-600 text-sm"
-              >
-                View Details
-              </Link>
+
+              <div className="p-4">
+                <h2 className="font-semibold">{item.name}</h2>
+                <p className="text-pink-600 font-bold">₹{item.price}</p>
+
+                <button
+                  onClick={() => removeFromWishlist(item.id)}
+                  className="flex items-center gap-2 text-red-500 mt-2"
+                >
+                  <Trash2 size={16} /> Remove
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -36,4 +42,3 @@ const Wishlist = () => {
 };
 
 export default Wishlist;
-

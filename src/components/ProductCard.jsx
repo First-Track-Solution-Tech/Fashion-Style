@@ -1,5 +1,5 @@
 import React from "react";
-import { ShoppingCart, Heart, Eye } from "lucide-react";
+import { Heart, Eye } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import Rating from "./Rating";
@@ -12,19 +12,16 @@ const ProductCard = ({ product, onView }) => {
 
   return (
     <div className="group bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+      {/* IMAGE WRAPPER */}
       <div className="relative">
-
-        {/* IMAGE */}
         <img
           src={product.image}
           alt={product.name}
-           className="w-full h-48 object-cover rounded-xl"
-          // className="w-full h-64 object-cover group-hover:scale-105 transition"
+          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
         />
 
         {/* ACTION ICONS */}
         <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
-
           {/* ❤️ Wishlist */}
           <button
             onClick={() =>
@@ -32,22 +29,22 @@ const ProductCard = ({ product, onView }) => {
                 ? removeFromWishlist(product.id)
                 : addToWishlist(product)
             }
-            className="p-2 bg-white rounded-full shadow"
+            className="p-2 bg-white rounded-full shadow hover:bg-pink-100"
           >
             <Heart
               className={`w-5 h-5 ${
-                inWishlist ? "fill-red-500 text-red-500" : "text-gray-600"
+                inWishlist ? "fill-pink-500 text-pink-500" : "text-gray-700"
               }`}
             />
           </button>
 
-          {/* 👁 Eye Icon */}
+          {/* 👁 Eye */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               onView(product);
             }}
-            className="p-2 bg-white rounded-full shadow"
+            className="p-2 bg-white rounded-full shadow hover:bg-gray-100"
           >
             <Eye className="w-5 h-5 text-gray-700" />
           </button>
@@ -66,7 +63,7 @@ const ProductCard = ({ product, onView }) => {
 
       {/* INFO */}
       <div className="p-4">
-        <h3 className="font-semibold">{product.name}</h3>
+        <h3 className="font-semibold text-lg">{product.name}</h3>
         <p className="text-sm text-gray-500">{product.category}</p>
 
         <div className="flex justify-between items-center mt-2">
@@ -79,6 +76,7 @@ const ProductCard = ({ product, onView }) => {
 };
 
 export default ProductCard;
+
 
 
 

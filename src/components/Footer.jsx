@@ -122,6 +122,8 @@ import {
   Facebook,
   Twitter,
   Instagram,
+  Youtube,
+  YoutubeIcon,
 } from "lucide-react";
 
 const Footer = () => {
@@ -131,7 +133,23 @@ const Footer = () => {
 
         {/* Brand */}
         <div>
-          <h2 className="text-xl font-bold mb-3">Fashion Style</h2>
+          {/* LOGO */}
+                   
+                      <Link to="/" className="flex items-center gap-3">
+                        <img
+                          src="/Logo.png"
+                          alt="FashionStyle Logo"
+                          className="h-14 md:h-18 lg:h-20 object-contain"
+                        />
+                        <span className="text-xl md:text-2xl font-bold tracking-wide
+                          bg-gradient-to-r from-sky-400 via-pink-400 to-rose-500
+                          bg-clip-text text-transparent">
+                            Fashion Style
+                          </span>
+          
+                         
+                        </Link>
+          {/* <h2 className="text-xl font-bold mb-3">Fashion Style</h2> */}
           <p className="text-gray-400 mb-4">
             Your one-stop destination for trendy and affordable fashion.
           </p>
@@ -139,6 +157,7 @@ const Footer = () => {
             <Facebook className="hover:text-white cursor-pointer" />
             <Twitter className="hover:text-white cursor-pointer" />
             <Instagram className="hover:text-white cursor-pointer" />
+            <Youtube className="hover:text-white cursor-pointer" />
           </div>
         </div>
 
