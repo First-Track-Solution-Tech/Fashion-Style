@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from "react";
 import ProductCard from "../components/ProductCard";
+import { useCart } from "../context/CartContext";
+
 
 const Sale = () => {
   /* ================= LOCAL SALE PRODUCTS ================= */
@@ -64,6 +66,8 @@ const Sale = () => {
   /* ================= STATE ================= */
   const [sort, setSort] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { addToCart } = useCart();
+
 
   /* ================= SORT ================= */
   const sortedProducts = useMemo(() => {
@@ -173,9 +177,20 @@ const Sale = () => {
                   </div>
                 )}
 
-                <button className="px-6 py-3 bg-black text-white rounded-lg">
+                <button
+                    onClick={() => {
+                      addToCart(selectedProduct);
+                      setSelectedProduct(null);
+                    }}
+                    className="px-6 py-3 bg-black text-white rounded-lg"
+                  >
+                    Add to Cart
+                  </button>
+
+
+                {/* <button className="px-6 py-3 bg-black text-white rounded-lg">
                   Add to Cart
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

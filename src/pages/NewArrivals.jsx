@@ -1,11 +1,14 @@
 import React, { useState, useMemo } from "react";
 import ProductCard from "../components/ProductCard";
+import { useCart } from "../context/CartContext";
+
 
 const NewArrivals = () => {
   const [sort, setSort] = useState("newest");
   const [category, setCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(8);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { addToCart } = useCart();
 
   const newArrivalProducts = [
     {
@@ -232,10 +235,20 @@ const NewArrivals = () => {
                   Premium quality product with stylish modern design.
                   Perfect for daily & festive wear.
                 </p>
+                
+                <button
+                    onClick={() => {
+                      addToCart(selectedProduct);
+                      setSelectedProduct(null); // closes modal after adding
+                    }}
+                    className="px-6 py-3 bg-purple-600 text-white rounded-full"
+                  >
+                    Add to Cart
+                  </button>
 
-                <button className="px-6 py-3 bg-purple-600 text-white rounded-full">
+                {/* <button className="px-6 py-3 bg-purple-600 text-white rounded-full">
                   Add to Cart
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

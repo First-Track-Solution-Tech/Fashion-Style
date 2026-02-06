@@ -3,15 +3,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
 import image from "../assets/image.png";
 import { useWishlist } from "../context/WishlistContext";
+import { useCart } from "../context/CartContext";
 
 
 // const Navbar = ({ cartCount = 0, wishlistCount = 0 }) => {
-const Navbar = ({ cartCount = 0 }) => {
+const Navbar = () => {
   const { wishlistCount } = useWishlist();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const navigate = useNavigate();
   const [openCategories, setOpenCategories] = useState(false);
+  const { getCartCount } = useCart();
+  const cartCount = getCartCount();
+
 
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -44,7 +48,7 @@ const Navbar = ({ cartCount = 0 }) => {
          
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="/Logo.png"
+                src="/Logo_design2.png"
                 alt="FashionStyle Logo"
                 className="h-14 md:h-18 lg:h-20 object-contain"
               />
@@ -154,24 +158,31 @@ const Navbar = ({ cartCount = 0 }) => {
               )}
             </Link>
 
-            {/* <Link to="/wishlist" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
-              <Heart className="w-5 h-5 text-gray-600" />
-              {wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {wishlistCount}
-                </span>
-              )}
-            </Link> */}
+           
 
             {/* CART */}
             <Link to="/cart" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
+                <ShoppingBag className="w-6 h-6 text-gray-700" />
+
+                {cartCount > 0 && (
+                  <span
+                    className="absolute -top-2 -right-2 bg-red-600 text-white text-xs
+                    w-5 h-5 flex items-center justify-center rounded-full font-bold"
+                  >
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+
+
+            {/* <Link to="/cart" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
               <ShoppingBag className="w-5 h-5 text-gray-600" />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </Link> */}
 
             {/* USER */}
             <div className="relative">

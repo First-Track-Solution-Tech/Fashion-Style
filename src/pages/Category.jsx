@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 import { products } from "../data/product";
 import ProductCard from "../components/ProductCard";
 import { Star, X } from "lucide-react";
+import { useCart } from "../context/CartContext";
+
 
 const Category = () => {
   const { categoryName } = useParams();
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { addToCart } = useCart();
 
   const filteredProducts = products.filter(
     (product) => product.category === categoryName
@@ -76,10 +79,20 @@ const Category = () => {
             <p className="text-lg font-bold mb-4">
               ₹{selectedProduct.price}
             </p>
-
-            <button className="w-full bg-black text-white py-2 rounded-lg">
+            <button
+              onClick={() => {
+                addToCart(selectedProduct);
+                setSelectedProduct(null); // optional - closes modal after adding
+              }}
+              className="w-full bg-black text-white py-2 rounded-lg"
+            >
               Add to Cart
             </button>
+
+
+            {/* <button className="w-full bg-black text-white py-2 rounded-lg">
+              Add to Cart
+            </button> */}
           </div>
         </div>
       )}
