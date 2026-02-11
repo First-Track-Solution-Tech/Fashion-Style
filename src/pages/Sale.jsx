@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from "react";
 import ProductCard from "../components/ProductCard";
+import { useCart } from "../context/CartContext";
+
 
 const Sale = () => {
   /* ================= LOCAL SALE PRODUCTS ================= */
@@ -15,7 +17,7 @@ const Sale = () => {
       reviews: 120,
       isOnSale: true,
       image:
-        "https://images.unsplash.com/photo-1520974735194-6c8a6c1d3c1b",
+        "https://images.pexels.com/photos/7582114/pexels-photo-7582114.jpeg",
       sizes: ["S", "M", "L"],
     },
     {
@@ -29,7 +31,7 @@ const Sale = () => {
       reviews: 98,
       isOnSale: true,
       image:
-        "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+        "https://images.pexels.com/photos/31041710/pexels-photo-31041710.jpeg",
       sizes: ["M", "L"],
     },
     {
@@ -64,6 +66,8 @@ const Sale = () => {
   /* ================= STATE ================= */
   const [sort, setSort] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { addToCart } = useCart();
+
 
   /* ================= SORT ================= */
   const sortedProducts = useMemo(() => {
@@ -173,9 +177,20 @@ const Sale = () => {
                   </div>
                 )}
 
-                <button className="px-6 py-3 bg-black text-white rounded-lg">
+                <button
+                    onClick={() => {
+                      addToCart(selectedProduct);
+                      setSelectedProduct(null);
+                    }}
+                    className="px-6 py-3 bg-black text-white rounded-lg"
+                  >
+                    Add to Cart
+                  </button>
+
+
+                {/* <button className="px-6 py-3 bg-black text-white rounded-lg">
                   Add to Cart
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
