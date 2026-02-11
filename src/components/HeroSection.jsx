@@ -4,8 +4,6 @@ const HeroSection = () => {
   return (
     <section
       className="relative w-full overflow-hidden h-[70vh] md:h-[85vh] bg-cover bg-center"
-
-    //  className="relative w-full h-[70vh] md:h-[85vh] bg-cover bg-center"
       style={{
         backgroundImage:
           "url('images/Hero-bg.jpg')",
