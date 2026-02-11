@@ -3,7 +3,9 @@ import React from "react";
 const HeroSection = () => {
   return (
     <section
-     className="relative w-full h-[70vh] md:h-[85vh] bg-cover bg-center"
+  className="relative w-full overflow-hidden h-[70vh] md:h-[85vh] bg-cover bg-center"
+
+    //  className="relative w-full h-[70vh] md:h-[85vh] bg-cover bg-center"
       style={{
         backgroundImage:
           "url('images/Hero-bg.jpg')",
@@ -14,7 +16,8 @@ const HeroSection = () => {
 
       <div className="relative container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight break-words">
+          {/* <h1 className="text-5xl md:text-7xl font-bold mb-6"> */}
             <span className="block bg-gradient-to-r from-pink-600 via-red-600 to-orange-500 bg-clip-text text-transparent">
               Discover Your
             </span>
@@ -26,7 +29,10 @@ const HeroSection = () => {
             tees to ethnic elegance, find your perfect fit with exclusive offers.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+
+
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
+          {/* <div className="flex flex-col sm:flex-row gap-4"> */}
             <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-red-600 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
               Shop Now
             </button>

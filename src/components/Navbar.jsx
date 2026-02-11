@@ -50,6 +50,8 @@ const Navbar = () => {
               <img
                 src="/Logo_design2.png"
                 alt="FashionStyle Logo"
+                // className="h-10 md:h-12 lg:h-14 object-contain"
+
                 className="h-14 md:h-18 lg:h-20 object-contain"
               />
               <span className="text-xl md:text-2xl font-bold tracking-wide
