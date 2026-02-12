@@ -4,13 +4,13 @@ import React from "react";
 const HeroSection = () => {
   return (
     <section
-      className="relative w-full overflow-hidden min-h-[75vh] md:min-h-[85vh] bg-cover bg-center flex items-center"
+      className="relative w-full min-h-[75vh] md:min-h-[85vh] bg-cover bg-center flex items-center"
       style={{
         backgroundImage: "url('/images/Hero-bg.jpg')",
       }}
     >
       {/* Content Wrapper */}
-      <div className="w-full max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="w-full px-5 sm:px-8 max-w-7xl mx-auto">
         <div className="max-w-2xl">
 
           {/* Heading */}
