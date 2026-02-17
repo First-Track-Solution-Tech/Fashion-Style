@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-
+import BottomNav from "./components/BottomNav";
 import Home from "./pages/Home";
 import Products from "./components/Products";
 import ProductDetails from "./pages/ProductDetails";
@@ -60,6 +60,8 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+
+      <BottomNav />
 
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
     </>
