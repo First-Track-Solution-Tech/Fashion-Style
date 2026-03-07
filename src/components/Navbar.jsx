@@ -42,7 +42,9 @@ const Navbar = () => {
         </div>
 
         {/* 🔹 MAIN NAVBAR */}
-        <div className="flex items-center justify-between px-4 py-3">
+        <div className="flex items-center justify-between px-6 py-2">
+
+        {/* <div className="flex items-center justify-between px-4 py-3"> */}
 
           {/* LOGO */}
          
@@ -51,8 +53,9 @@ const Navbar = () => {
                 src="/Logo_design2.png"
                 alt="FashionStyle Logo"
                 // className="h-10 md:h-12 lg:h-14 object-contain"
+                className="h-10 md:h-12 lg:h-14"
 
-                className="h-14 md:h-18 lg:h-20 object-contain"
+                // className="h-14 md:h-18 lg:h-20 object-contain"
               />
               <span className="text-xl md:text-2xl font-bold tracking-wide
                 bg-gradient-to-r from-sky-400 via-pink-400 to-rose-500
@@ -63,21 +66,6 @@ const Navbar = () => {
                
               </Link>
 
-            {/* <Link to="/" className="flex items-center gap-3">
-              <img
-                src="/Logo.png"
-                alt="FashionStyle Logo"
-                // className="h-14 md:h-16 object-contain"
-
-                // className="h-14 md:h-18 lg:h-20 rounded-full"
-                // className="h-10 md:h-12 rounded-full"
-              />
-
-              <span className="text-xl md:text-2xl font-bold tracking-wide text-gray-900">
-                Fashion{" "}
-                <span className="text-red-500">Style</span>
-              </span>
-            </Link> */}
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-8">
@@ -177,15 +165,6 @@ const Navbar = () => {
               </Link>
 
 
-            {/* <Link to="/cart" className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100">
-              <ShoppingBag className="w-5 h-5 text-gray-600" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {cartCount}
-                </span>
-              )}
-            </Link> */}
-
             {/* USER */}
             <div className="relative">
               <button
@@ -234,9 +213,7 @@ const Navbar = () => {
                 bg-clip-text text-transparent">
                   Fashion Style
                 </span>
-              {/* <h2 className="text-xl font-bold text-gray-900">
-                Fashion <span className="text-red-500">Style</span>
-              </h2> */}
+              
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center"
@@ -265,7 +242,7 @@ const Navbar = () => {
               </Link>
 
               {/* Categories */}
-              {/* Categories (Accordion) */}
+
               <div>
                 <button
                   onClick={() => setOpenCategories(!openCategories)}
@@ -343,3 +320,68 @@ const Navbar = () => {
 
 export default Navbar;
 
+
+
+
+
+
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { Bell, Heart, ShoppingCart } from "lucide-react";
+
+// const Navbar = () => {
+//   return (
+//     <header className="bg-white shadow-sm sticky top-0 z-50">
+//       <div className="flex items-center justify-between px-4 py-3">
+
+//         {/* Logo */}
+//         {/* LOGO */}
+         
+//            <Link to="/" className="flex items-center gap-3">
+//              <img
+//                 src="/Logo_design2.png"
+//                 alt="FashionStyle Logo"
+//                 // className="h-10 md:h-12 lg:h-14 object-contain"
+//                 className="h-10 md:h-12 lg:h-14"
+
+//                 // className="h-14 md:h-18 lg:h-20 object-contain"
+//               />
+//               <span className="text-xl md:text-2xl font-bold tracking-wide
+//                 bg-gradient-to-r from-sky-400 via-pink-400 to-rose-500
+//                 bg-clip-text text-transparent">
+//                   Fashion Style
+//                 </span>
+
+               
+//               </Link>
+
+
+//         {/* Icons */}
+//         <div className="flex items-center gap-4 text-gray-600">
+          
+//           <Link to="/notifications" className="relative">
+//             <Bell size={20} />
+//             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] px-1 rounded-full">
+//               2
+//             </span>
+//           </Link>
+
+//           <Link to="/wishlist">
+//             <Heart size={20} />
+//           </Link>
+
+//           <Link to="/cart" className="relative">
+//             <ShoppingCart size={20} />
+//             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] px-1 rounded-full">
+//               3
+//             </span>
+//           </Link>
+
+//         </div>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Navbar;
