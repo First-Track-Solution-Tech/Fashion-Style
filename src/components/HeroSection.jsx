@@ -24,18 +24,17 @@ const HeroSection = () => {
           </h1>
 
           {/* Paragraph */}
-          <p className="text-base sm:text-lg text-gray-600 mb-8">
+          <p className="text-base sm:text-lg mb-8 bg-gradient-to-r from-gray-700 via-pink-500 to-rose-500 bg-clip-text text-transparent">
             Explore our curated collection of premium fashion wear. From casual
             tees to ethnic elegance, find your perfect fit with exclusive offers.
           </p>
-
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full">
             <button className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-red-600 transition-all shadow-lg hover:shadow-xl">
               Shop Now
             </button>
 
-            <button className="w-full sm:w-auto px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-red-500 hover:text-red-600 transition-all">
+            <button className="w-full sm:w-auto px-8 py-3 border border-pink-300 text-pink-700 rounded-lg font-semibold hover:bg-pink-100 transition-all">
               View Collection
             </button>
           </div>

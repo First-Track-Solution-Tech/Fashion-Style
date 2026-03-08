@@ -153,7 +153,7 @@ const ProductCard = ({ product, onView }) => {
         />
 
         {/* ACTION ICONS */}
-        <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
+        <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition">
           
           {/* Wishlist */}
           <button
