@@ -54,7 +54,8 @@ const FeaturedProducts = ({ products }) => {
                   />
 
                   {/* WISHLIST & EYE ICON */}
-                  <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
+                  <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition">
+                  {/* <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition"> */}
                     {/* Wishlist */}
                     <button
                       onClick={(e) => {
@@ -84,7 +85,8 @@ const FeaturedProducts = ({ products }) => {
                   </div>
 
                   {/* ADD TO CART BUTTON */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-3">
+
+                  <div className="absolute bottom-0 left-0 right-0 bg-white lg:transform lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300 p-3">
                     <button
                       onClick={() => addToCart(product, 1)}
                       className="w-full py-2 bg-black text-white rounded-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition"
@@ -92,6 +94,14 @@ const FeaturedProducts = ({ products }) => {
                       <ShoppingCart className="w-4 h-4" /> Add to Cart
                     </button>
                   </div>
+                  {/* <div className="absolute bottom-0 left-0 right-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-3">
+                    <button
+                      onClick={() => addToCart(product, 1)}
+                      className="w-full py-2 bg-black text-white rounded-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition"
+                    >
+                      <ShoppingCart className="w-4 h-4" /> Add to Cart
+                    </button>
+                  </div> */}
                 </div>
 
                 {/* PRODUCT INFO */}
