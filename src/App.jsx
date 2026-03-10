@@ -13,6 +13,7 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Notifications from "./pages/Notifications";
 import Category from "./pages/Category";
 
 import FAQ from "./pages/FAQ";
@@ -50,6 +51,7 @@ function AppContent() {
 
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/notifications" element={<Notifications />} />
 
         <Route path="/new-arrivals" element={<NewArrivals />} />
         <Route path="/sale" element={<Sale />} />
