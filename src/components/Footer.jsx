@@ -1,118 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Youtube } from "lucide-react";
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-gray-900 text-white">
-//       <div className="container mx-auto px-4 py-12">
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-//           {/* Company Info */}
-//           <div>
-//             <h3 className="text-2xl font-bold mb-4">FashionStore</h3>
-//             <p className="text-gray-400 mb-6">
-//               Your one-stop destination for trendy and affordable fashion.
-//             </p>
-//             <div className="flex space-x-4">
-//               <a href="#" className="text-gray-400 hover:text-white">
-//                 <Facebook className="w-5 h-5" />
-//               </a>
-//               <a href="#" className="text-gray-400 hover:text-white">
-//                 <Instagram className="w-5 h-5" />
-//               </a>
-//               <a href="#" className="text-gray-400 hover:text-white">
-//                 <Twitter className="w-5 h-5" />
-//               </a>
-//               <a href="#" className="text-gray-400 hover:text-white">
-//                 <Youtube className="w-5 h-5" />
-//               </a>
-//             </div>
-//           </div>
-
-//           {/* Quick Links */}
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-//             <ul className="space-y-2">
-//               <li>
-//                 <Link to="/" className="text-gray-400 hover:text-white">
-//                   Home
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link to="/abouts" className="text-gray-400 hover:text-white">
-//                   Abouts
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link to="/blog" className="text-gray-400 hover:text-white">
-//                   Blog
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link to="/contact us" className="text-gray-400 hover:text-white">
-//                   Contact Us
-//                 </Link>
-//               </li>
-//             </ul>
-//           </div>
-
-//           {/* Customer Service */}
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
-//             <ul className="space-y-2">
-//               <li>
-//                 <a href="#" className="text-gray-400 hover:text-white">FAQ</a>
-//               </li>
-//               <li>
-//                 <a href="#" className="text-gray-400 hover:text-white">Shipping Policy</a>
-//               </li>
-//               <li>
-//                 <a href="#" className="text-gray-400 hover:text-white">Returns & Exchanges</a>
-//               </li>
-//               <li>
-//                 <a href="#" className="text-gray-400 hover:text-white">Size Guide</a>
-//               </li>
-
-//             </ul>
-//           </div>
-
-//           {/* Contact Info */}
-//           <div>
-//             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-//             <ul className="space-y-3">
-//               <li className="flex items-center space-x-3">
-//                 <MapPin className="w-5 h-5 text-gray-400" />
-//                 <span className="text-gray-400">123 Fashion Street, Style City</span>
-//               </li>
-//               <li className="flex items-center space-x-3">
-//                 <Phone className="w-5 h-5 text-gray-400" />
-//                 <span className="text-gray-400">01234</span>
-//               </li>
-//               <li className="flex items-center space-x-3">
-//                 <Mail className="w-5 h-5 text-gray-400" />
-//                 <span className="text-gray-400">support@fashionstore.com</span>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-
-  
-
-//         {/* Copyright */}
-//         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-//           <p>© {new Date().getFullYear()} FashionStore. All rights reserved.</p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
-
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -137,7 +22,7 @@ const Footer = () => {
                    
                       <Link to="/" className="flex items-center gap-3">
                         <img
-                          src="/Logo.png"
+                          src="/Logo_design2.png"
                           alt="FashionStyle Logo"
                           className="h-14 md:h-18 lg:h-20 object-contain"
                         />
@@ -204,7 +89,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-700 text-center py-4 text-gray-400 text-sm">
-        © 2026 Fashion Style. All rights reserved.
+      Fashion Style, Copyright ©2026, First Track Solution Technologies. All rights reserved
       </div>
     </footer>
   );
