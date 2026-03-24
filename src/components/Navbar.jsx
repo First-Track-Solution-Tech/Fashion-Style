@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Search, Heart, ShoppingBag, User, Menu, X } from "lucide-react";
+import { Search, Heart, ShoppingBag, User, Menu, X, Bell } from "lucide-react";
 import image from "../assets/image.png";
 import { useWishlist } from "../context/WishlistContext";
 import { useCart } from "../context/CartContext";
@@ -15,9 +15,6 @@ const Navbar = () => {
   const [openCategories, setOpenCategories] = useState(false);
   const { getCartCount } = useCart();
   const cartCount = getCartCount();
-
-
-
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleUserClick = () => {
@@ -33,34 +30,29 @@ const Navbar = () => {
 
   return (
     <header>
-      
-      <nav className="bg-white/90 backdrop-blur shadow sticky top-0 z-50">
-
+      {/* <nav className="bg-gradient-to-r from-purple-700 via-pink-600 to-rose-500 text-white shadow sticky top-0 z-50"> */}
+      <nav className="bg-gradient-to-r from-gray-900 via-pink-800 to-rose-700 text-white shadow sticky top-0 z-50">
+      {/* <nav className="bg-white/90 backdrop-blur shadow sticky top-0 z-50"> */}
         {/* 🔔 TOP BANNER */}
         <div className="bg-pink-500 text-white text-center text-sm p-2">
           🎉 Exclusive Launch Sale! Get 30% OFF on all new arrivals. Limited time offer.
         </div>
 
         {/* 🔹 MAIN NAVBAR */}
-        <div className="flex items-center justify-between px-4 py-3">
-
-         
-         
+        <div className="flex items-center justify-between px-4 py-0.5">
             <Link to="/" className="flex items-center gap-3">
               <img
                 src="/Logo_design2.png"
-                alt="FashionStyle Logo"
+             
                 // className="h-10 md:h-12 lg:h-14 object-contain"
 
-                className="h-14 md:h-18 lg:h-20 object-contain"
+                className="h-14 md:h-12 lg:h-20 object-contain"
               />
               <span className="text-xl md:text-2xl font-bold tracking-wide
                 bg-gradient-to-r from-sky-400 via-pink-400 to-rose-500
                 bg-clip-text text-transparent">
                   Fashion Style
-                </span>
-
-               
+                </span> 
               </Link>
 
             {/* <Link to="/" className="flex items-center gap-3">
@@ -80,7 +72,7 @@ const Navbar = () => {
             </Link> */}
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
 
             <Link to="/" className="hover:text-pink-600 font-medium">
               Home
@@ -90,11 +82,8 @@ const Navbar = () => {
               Products
             </Link>
 
-        
-
             {/* ✅ CATEGORIES (CLICK + HOVER) */}
             <div className="relative group">
-               
                 <span className="hover:text-pink-600 font-medium cursor-pointer">
                   Categories
                 </span>
@@ -132,18 +121,40 @@ const Navbar = () => {
             </Link>
 
             {/* SEARCH */}
+            {/* <button
+              onClick={() => navigate("/products")}
+              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100"
+            >
+              <Search className="w-5 h-5 text-gray-600" />
+            </button> */}
+
             <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 w-72">
-              <Search className="w-4 h-4 text-gray-500" />
+              <Search className="w-4 h-4 text-black" />
               <input
                 type="text"
                 placeholder="Search products"
-                className="bg-transparent ml-2 w-full outline-none text-sm"
+                className="bg-transparent ml-2 w-full outline-none text-black"
               />
             </div>
           </div>
 
           {/* RIGHT ICONS */}
           <div className="flex items-center gap-2">
+
+          {/* NOTIFICATION */}
+          <Link
+            to="/notifications"
+            className="relative w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100"
+          >
+            <Bell className="w-5 h-5 text-black" />
+
+            <span
+              className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px]
+              w-4 h-4 flex items-center justify-center rounded-full font-bold"
+            >
+              3
+            </span>
+          </Link>
 
             {/* WISHLIST */}
              <Link
@@ -223,7 +234,7 @@ const Navbar = () => {
       {/* 📱 MOBILE MENU */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-start">
-        <div className="bg-gradient-to-b from-white via-pink-50 to-pink-100 h-full w-[80%] max-w-sm shadow-xl">
+        <div className="bg-gradient-to-b from-white via-pink-50 to-pink-100 h-screen w-[80%] max-w-sm shadow-xl">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b">
               <span className="text-xl md:text-2xl font-bold tracking-wide

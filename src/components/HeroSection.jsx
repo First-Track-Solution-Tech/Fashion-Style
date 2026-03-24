@@ -30,13 +30,18 @@ const HeroSection = () => {
           </p>
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full">
-            <button className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-red-600 transition-all shadow-lg hover:shadow-xl">
-              Shop Now
-            </button>
-
-            <button className="w-full sm:w-auto px-8 py-3 border border-pink-300 text-pink-700 rounded-lg font-semibold hover:bg-pink-100 transition-all">
-              View Collection
-            </button>
+          <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg font-semibold
+          hover:from-pink-600 hover:to-red-600
+          active:from-pink-700 active:to-red-700
+          transition-all shadow-lg hover:shadow-xl">
+            Shop Now
+          </button>
+          <button className="px-8 py-3 border border-pink-300 text-pink-700 rounded-lg font-semibold
+              hover:bg-pink-100
+              active:bg-pink-200
+              transition-all">
+                View Collection
+              </button>
           </div>
 
         </div>
